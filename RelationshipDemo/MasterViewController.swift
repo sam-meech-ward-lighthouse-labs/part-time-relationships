@@ -7,16 +7,65 @@
 //
 
 import UIKit
+import Parse
 
 class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
-    var objects = [Any]()
+    var objects = [Song]()
+    
+    let songTitles = [
+        "Starboy",
+        "I Feel It Coming",
+        "Party Monster",
+        "False Alarm",
+        "Reminder",
+        "Rockin’",
+        "Secrets",
+        ]
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+//        let artist = Artist()
+//        artist.name = "The Weeknd"
+//        
+//        artist.saveInBackground()
+//        
+//        for songTitle in songTitles {
+//            let song = Song()
+//            
+//            song.title = songTitle
+//            song.artist = artist;
+//            
+//            song.saveInBackground()
+//        }
+        
+        if let artistQuery = Artist.query() {
+            artistQuery.whereKey("name", equalTo: "The Weeknd")
+            
+            artistQuery.getFirstObjectInBackground(block: { (artist: PFObject?, error: Error?) in
+                
+                if let query = Song.query() {
+                    query.whereKey("artist", equalTo: artist!)
+                    
+                    query.findObjectsInBackground(block: { (songs: [PFObject]?, error: Error?) in
+                        
+                        self.objects = songs as! [Song]
+                        
+                        OperationQueue.main.addOperation {
+                            self.tableView.reloadData()
+                        }
+                    })
+                }
+                
+            })
+        }
+        
+        
+        
 
     }
 
@@ -56,7 +105,8 @@ class MasterViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-        
+        let song = objects[indexPath.row];
+        cell.textLabel?.text = song.title
         
         return cell
     }
