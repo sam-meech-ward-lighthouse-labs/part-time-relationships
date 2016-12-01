@@ -29,27 +29,37 @@ class MasterViewController: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-//        let artist = Artist()
-//        artist.name = "The Weeknd"
+//        let artist1 = Artist()
+//        artist1.name = "The Weeknd"
 //        
-//        artist.saveInBackground()
+//        let artist2 = Artist()
+//        artist2.name = "Daft Punk"
+//        
+//        try! artist1.save()
+//        try! artist2.save()
 //        
 //        for songTitle in songTitles {
 //            let song = Song()
 //            
 //            song.title = songTitle
-//            song.artist = artist;
+//            
+//            song.artists.add(artist1)
+//            
+//            if songTitle == "Starboy" || songTitle == "I Feel It Coming" {
+//                song.artists.add(artist2)
+//            }
 //            
 //            song.saveInBackground()
 //        }
         
         if let artistQuery = Artist.query() {
-            artistQuery.whereKey("name", equalTo: "The Weeknd")
+            artistQuery.whereKey("name", equalTo: "Daft Punk")
             
-            artistQuery.getFirstObjectInBackground(block: { (artist: PFObject?, error: Error?) in
+
                 
                 if let query = Song.query() {
-                    query.whereKey("artist", equalTo: artist!)
+//                    query.whereKey("artists", equalTo: artistQuery)
+                    query.whereKey("artists", matchesQuery: artistQuery)
                     
                     query.findObjectsInBackground(block: { (songs: [PFObject]?, error: Error?) in
                         
@@ -60,8 +70,7 @@ class MasterViewController: UITableViewController {
                         }
                     })
                 }
-                
-            })
+
         }
         
         

@@ -12,7 +12,10 @@ import Parse
 class Song: PFObject, PFSubclassing {
 
     @NSManaged var title: String
-    @NSManaged var artist: Artist
+    
+    var artists: PFRelation<PFObject>! {
+        return relation(forKey: "artists")
+    }
     
     
     static func parseClassName() -> String {
