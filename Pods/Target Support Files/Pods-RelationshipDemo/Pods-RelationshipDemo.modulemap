@@ -1,0 +1,6 @@
+framework module Pods_RelationshipDemo {
+  umbrella header "Pods-RelationshipDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}
