@@ -14,6 +14,8 @@
 		22BD5B941DF098C600432B2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22BD5B931DF098C600432B2C /* Assets.xcassets */; };
 		22BD5B971DF098C600432B2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22BD5B951DF098C600432B2C /* LaunchScreen.storyboard */; };
 		22BD5BA21DF098C600432B2C /* RelationshipDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BD5BA11DF098C600432B2C /* RelationshipDemoTests.swift */; };
+		22BD5BE41DF117B700432B2C /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BD5BE31DF117B700432B2C /* Artist.swift */; };
+		22BD5BE61DF1188800432B2C /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BD5BE51DF1188800432B2C /* Song.swift */; };
 		6807DC2B20228FBB3F3057D7 /* Pods_RelationshipDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6837491F89A7038F69CB637 /* Pods_RelationshipDemo.framework */; };
 		6D67D32ADBEBDC582000CBD3 /* Pods_RelationshipDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF87BC051A5BF5DD36968CA3 /* Pods_RelationshipDemoTests.framework */; };
 /* End PBXBuildFile section */
@@ -41,6 +43,8 @@
 		22BD5B9D1DF098C600432B2C /* RelationshipDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RelationshipDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22BD5BA11DF098C600432B2C /* RelationshipDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelationshipDemoTests.swift; sourceTree = "<group>"; };
 		22BD5BA31DF098C600432B2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22BD5BE31DF117B700432B2C /* Artist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
+		22BD5BE51DF1188800432B2C /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		2AA751DCECEBACBDB09A35D2 /* Pods-RelationshipDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RelationshipDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-RelationshipDemo/Pods-RelationshipDemo.release.xcconfig"; sourceTree = "<group>"; };
 		88F56DD921542A1428145967 /* Pods-RelationshipDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RelationshipDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RelationshipDemoTests/Pods-RelationshipDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		992F02B7ED58724C6EFE5295 /* Pods-RelationshipDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RelationshipDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RelationshipDemo/Pods-RelationshipDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -94,6 +98,7 @@
 				22BD5B8A1DF098C600432B2C /* AppDelegate.swift */,
 				22BD5B8C1DF098C600432B2C /* MasterViewController.swift */,
 				22BD5B8E1DF098C600432B2C /* DetailViewController.swift */,
+				22BD5BE21DF117A300432B2C /* Models */,
 				22BD5B901DF098C600432B2C /* Main.storyboard */,
 				22BD5B931DF098C600432B2C /* Assets.xcassets */,
 				22BD5B951DF098C600432B2C /* LaunchScreen.storyboard */,
@@ -109,6 +114,15 @@
 				22BD5BA31DF098C600432B2C /* Info.plist */,
 			);
 			path = RelationshipDemoTests;
+			sourceTree = "<group>";
+		};
+		22BD5BE21DF117A300432B2C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				22BD5BE31DF117B700432B2C /* Artist.swift */,
+				22BD5BE51DF1188800432B2C /* Song.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		4344EDBA37CD20293F8A8397 /* Pods */ = {
@@ -337,7 +351,9 @@
 			files = (
 				22BD5B8F1DF098C600432B2C /* DetailViewController.swift in Sources */,
 				22BD5B8D1DF098C600432B2C /* MasterViewController.swift in Sources */,
+				22BD5BE41DF117B700432B2C /* Artist.swift in Sources */,
 				22BD5B8B1DF098C600432B2C /* AppDelegate.swift in Sources */,
+				22BD5BE61DF1188800432B2C /* Song.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

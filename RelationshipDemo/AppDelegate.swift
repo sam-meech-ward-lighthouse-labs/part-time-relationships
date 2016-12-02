@@ -21,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         setupSplitView()
         
 //        .registerSubclass()
+        Artist.registerSubclass()
+        Song.registerSubclass()
         
         let configuration = ParseClientConfiguration { clientConfiguration in
             clientConfiguration.applicationId = "17ff1a2f-11c0-43e1-8bdd-1f4960bef808"
